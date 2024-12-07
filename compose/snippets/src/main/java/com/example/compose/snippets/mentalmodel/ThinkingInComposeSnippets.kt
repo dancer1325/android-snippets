@@ -46,6 +46,8 @@ fun Greeting(names: List<String>) {
 @Composable
 fun ClickCounter(clicks: Int, onClick: () -> Unit) {
     Button(onClick = onClick) {
+        // EVERY time the button is clicked -> the caller -- updates the -- value of clicks -> Compose runs the recomposition
+        // == calls the lambda -- with the -- `Text()` AGAIN
         Text("I've been clicked $clicks times")
     }
 }
