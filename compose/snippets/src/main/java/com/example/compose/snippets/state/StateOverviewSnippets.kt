@@ -50,6 +50,8 @@ import androidx.compose.ui.unit.dp
 import androidx.window.core.layout.WindowSizeClass
 
 // [START android_compose_state_overview]
+// if you run this & try to enter text -> nothing happens
+// Reason: TextField does NOT update itself—it | change value parameter
 @Composable
 private fun HelloContent() {
     Column(modifier = Modifier.padding(16.dp)) {
