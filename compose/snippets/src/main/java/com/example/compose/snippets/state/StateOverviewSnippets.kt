@@ -69,11 +69,13 @@ private fun HelloContent() {
 }
 // [END android_compose_state_overview]
 
+
 private object StateSnippet1 {
     // [START android_compose_state_remember]
     @Composable
     fun HelloContent() {
         Column(modifier = Modifier.padding(16.dp)) {
+            // remembered value -- used as a -- parameter for other composables or logic | statements
             var name by remember { mutableStateOf("") }
             if (name.isNotEmpty()) {
                 Text(
