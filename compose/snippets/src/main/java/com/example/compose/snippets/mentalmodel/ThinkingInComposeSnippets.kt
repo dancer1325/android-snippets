@@ -54,6 +54,9 @@ fun ClickCounter(clicks: Int, onClick: () -> Unit) {
 // [END android_compose_thinking_in_compose_recomposition]
 
 // [START android_compose_thinking_in_compose_recomposition_logic]
+// composable / update a value | SharedPreferences
+// 1. composable should NOT read or write -- from -- shared preferences itself
+// 2. this code moves the read and write -- to a -- ViewModel | background coroutine
 @Composable
 fun SharedPrefsToggle(
     text: String,
@@ -62,7 +65,7 @@ fun SharedPrefsToggle(
 ) {
     Row {
         Text(text)
-        Checkbox(checked = value, onCheckedChange = onValueChanged)
+        Checkbox(checked = value, onCheckedChange = onValueChanged) // passed the current value -- with a -- callback / trigger an update
     }
 }
 // [END android_compose_thinking_in_compose_recomposition_logic]
